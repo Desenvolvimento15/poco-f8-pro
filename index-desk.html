@@ -1752,5 +1752,43 @@ ambientes além das condições do teste IP68.</span></div>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="./main.js"></script>
 
+
+<script>
+        (function () {
+
+            document.addEventListener("click", function (e) {
+
+                // botão "+"
+                var btn = e.target.closest('.xm-img[role="button"]');
+                if (!btn) return;
+
+                e.preventDefault();
+
+                // pega o slide atual (funciona com slick)
+                var slide = btn.closest('.slick-slide');
+                if (!slide) return;
+
+                // pega o container do conteúdo aberto
+                var openBlock = slide.querySelector('.div650_ye, .div638_ye');
+                if (!openBlock) return;
+
+                // pega o texto (ex: div661)
+                var text = openBlock.querySelector('.div661, .div649');
+                if (!text) return;
+
+                // TOGGLE (abre/fecha só o texto)
+                var isVisible = text.style.display === "block";
+
+                if (isVisible) {
+                    text.style.setProperty("display", "none", "important");
+                } else {
+                    text.style.setProperty("display", "block", "important");
+                }
+
+            });
+
+        })();
+</script>
+
 </body>
 </html>
